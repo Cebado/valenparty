@@ -23,13 +23,15 @@ public class GPSclass {
     
 	LocationManager mLocationManager;
 	Location mLocation;
-	MyLocationListener mLocationListener;
+	//MyLocationListener mLocationListener;
 	
 	Location currentLocation = null;
 	
 	TextView outlat;
 	TextView outlong;
 	
+	
+	/*
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -141,4 +143,5 @@ public class GPSclass {
             // TODO Auto-generated method stub
         }
     } 
+    */
 }
