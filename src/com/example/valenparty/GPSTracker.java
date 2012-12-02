@@ -14,9 +14,33 @@ import android.os.IBinder;
 import android.provider.Settings;
 import android.util.Log;
  
+
+
+/*******************************************************************************
+ *  LÓGICA INTERNA DEL PROGRAMA (O EXPLICACION DE LA JUGADA):
+ * 
+ * LA IDEA ES CREAR UNA CLASE QUE SE LANZA CUANDO ARRANCA EL PROGRAMA (O SE ACEPTA
+ * EL RASTREO) Y SE MANTIENE EN SEGUNDO PLANO CON UNA TASA DE REFRESCO DE 20 SEGUNDOS
+ * A 5 MINUTOS (CONFIGURABLE EN LA PANTALLA DE "AJUSTES"). 
+ * 
+ * CUANDO SE RECIBE CADA COORDENADA SE DEBE "TRATAR"
+ * - REPRESENTANDOLA EN UN MAPA
+ * - ENVIANDOLA POR INTERNET A UN WEBSERVICE
+ * - GUARDANDOLA LOCALMENTE (PARA POSTERIORMENTE REPRESENTAR UN TRAYECTO)
+ * 
+ * A TENER EN CUENTA:
+ * - LAS PETICIONES DE GEOPOSICIONAMIENTO SE REALIZARÁN MEDIANTE UNA TAREA ASÍNCRONA
+ * 
+ *******************************************************************************/
+
+
+
+
 public class GPSTracker extends Service implements LocationListener {
- 
-    private final Context mContext;
+	
+	// LA CLASE QUE UTILIZAREMOS COMO SERVICIO DESDE OTRO ACTIVITY
+    
+	private final Context mContext;
  
     // flag for GPS status
     boolean isGPSEnabled = false;
