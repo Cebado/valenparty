@@ -134,29 +134,29 @@ public class GPSclass {
     }
 */
 
-	public void run() {
+//	public void run() {
     	
-		mLocationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-		
-		if (mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-			
-			Looper.prepare();
-			
-			mLocationListener = new MyLocationListener();
-			
-			mLocationManager.requestLocationUpdates(
-	                LocationManager.GPS_PROVIDER, 0, 0, mLocationListener);
-			Looper.loop(); 
-			Looper.myLooper().quit(); 
-			
-		} else {
+//		mLocationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+//		
+//		if (mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+//			
+//			Looper.prepare();
+//			
+//			mLocationListener = new MyLocationListener();
+//			
+//			mLocationManager.requestLocationUpdates(
+//	                LocationManager.GPS_PROVIDER, 0, 0, mLocationListener);
+//			Looper.loop(); 
+//			Looper.myLooper().quit(); 
+//			
+//		} else {
 			
 /*            Toast.makeText(getBaseContext(), 
                     getResources().getString("La señal GPS NOOO se ha encontrado correctamente"), 
                     Toast.LENGTH_LONG).show();
 */           
-		}
-	}
+//		}
+//	}
     
 	private Handler handler = new Handler() {
 		@Override
