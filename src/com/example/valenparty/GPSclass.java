@@ -1,5 +1,8 @@
 package com.example.valenparty;
 
+import com.example.valenparty.R.layout;
+
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,6 +19,59 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+/*******************************************************************************
+ *  LÓGICA INTERNA DEL PROGRAMA (O EXPLICACION DE LA JUGADA):
+ * 
+ * LA IDEA ES CREAR UNA CLASE QUE SE LANZA CUANDO ARRANCA EL PROGRAMA (O SE ACEPTA
+ * EL RASTREO) Y SE MANTIENE EN SEGUNDO PLANO CON UNA TASA DE REFRESCO DE 20 SEGUNDOS
+ * A 5 MINUTOS (CONFIGURABLE EN LA PANTALLA DE "AJUSTES"). 
+ * 
+ * CUANDO SE RECIBE CADA COORDENADA SE DEBE "TRATAR"
+ * - REPRESENTANDOLA EN UN MAPA
+ * - ENVIANDOLA POR INTERNET A UN WEBSERVICE
+ * - GUARDANDOLA LOCALMENTE (PARA POSTERIORMENTE REPRESENTAR UN TRAYECTO)
+ * 
+ * A TENER EN CUENTA:
+ * - LAS PETICIONES DE GEOPOSICIONAMIENTO SE REALIZARÁN MEDIANTE UNA TAREA ASÍNCRONA
+ * 
+ *******************************************************************************/
+
+/*
+public class lmt extends Activity {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+
+         fyl lfyl = new fyl(this); //Here the context is passing 
+
+        Location location = lfyl.getLocation();
+        String latLongString = lfyl.updateWithNewLocation(location);
+
+        TextView myLocationText = (TextView)findViewById(R.id.myLocationText);
+        myLocationText.setText("Your current position is:\n" + latLongString);
+    }
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public class GPSclass {
 
 	
@@ -23,7 +79,7 @@ public class GPSclass {
     
 	LocationManager mLocationManager;
 	Location mLocation;
-	//MyLocationListener mLocationListener;
+	MyLocationListener mLocationListener;
 	
 	Location currentLocation = null;
 	
@@ -31,37 +87,37 @@ public class GPSclass {
 	TextView outlong;
 	
 	
-	/*
-    @Override
+/*
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        //super.onCreate(savedInstanceState);
+        //setContentView(R.layout.activity_main);
         
-        outlat = (TextView) findViewById(R.id.outlat);
-        outlong = (TextView) findViewById(R.id.outlong);
-        
-		Button btsearch = (Button) findViewById(R.id.btsearch);
-		btsearch.setOnClickListener(new View.OnClickListener() {
+//        outlat = (TextView) findViewById(R.id.outlat);
+//        outlong = (TextView) findViewById(R.id.outlong);
+//        
+//		Button btsearch = (Button) findViewById(R.id.btsearch);
+//		btsearch.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick(View view) {
+//           public void onClick(View view) {
                 writeSignalGPS();
-            }
+//            }
           
-        });
+//        })
+//        ;
         
-    }
+    }*/
     
     private void setCurrentLocation(Location loc) {
     	currentLocation = loc;
     }
-    
-    
+   
+  /*  
     private void writeSignalGPS() {
     	
     	DialogInterface.OnCancelListener dialogCancel = new DialogInterface.OnCancelListener() {
 
             public void onCancel(DialogInterface dialog) {
-                Toast.makeText(getBaseContext(), 
+                Toast.makeText(getBaseContext(R.layout.this), 
                         getResources().getString(R.string.gps_signal_not_found), 
                         Toast.LENGTH_LONG).show();
                 handler.sendEmptyMessage(0);
@@ -76,8 +132,8 @@ public class GPSclass {
 		thread.start();
 
     }
+*/
 
-	@Override
 	public void run() {
     	
 		mLocationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
@@ -95,10 +151,10 @@ public class GPSclass {
 			
 		} else {
 			
-            Toast.makeText(getBaseContext(), 
-                    getResources().getString(R.string.gps_signal_not_found), 
+/*            Toast.makeText(getBaseContext(), 
+                    getResources().getString("La señal GPS NOOO se ha encontrado correctamente"), 
                     Toast.LENGTH_LONG).show();
-            
+*/           
 		}
 	}
     
@@ -119,9 +175,9 @@ public class GPSclass {
         @Override
         public void onLocationChanged(Location loc) {
             if (loc != null) {
-                Toast.makeText(getBaseContext(), 
-                    getResources().getString(R.string.gps_signal_found), 
-                    Toast.LENGTH_LONG).show();
+//                Toast.makeText(getBaseContext(), 
+//                    getResources().getString("La señal GPS se ha encontrado correctamente"), 
+//                    Toast.LENGTH_LONG).show();
                 setCurrentLocation(loc);
                 handler.sendEmptyMessage(0);
             }
@@ -143,5 +199,5 @@ public class GPSclass {
             // TODO Auto-generated method stub
         }
     } 
-    */
+   
 }
