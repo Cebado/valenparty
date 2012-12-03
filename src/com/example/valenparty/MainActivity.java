@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
                     
                     Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
                 }else{
-                	//PRUEBA DE GIT
+                	//cambio guanter
                     gps.showSettingsAlert();
                 }
  
