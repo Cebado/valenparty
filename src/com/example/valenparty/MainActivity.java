@@ -11,7 +11,7 @@ public class MainActivity extends Activity {
 
     Button btnShowLocation;
     
-    // GPSTracker class
+    // clase GPSTracker 
     GPSTracker gps;
 	
 	
@@ -20,21 +20,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*Comentario de prueba POR MI again*/
-        /*F*/
-
-        /*Caca de la vaca 7*/
-        /*Comentario de prueba POR MI again*/
-
-
-        /* COMENTARIO MIGUEL ANGEL*/
-        
-        /*Comentario mio*/
-
-        /*COMENTARIO MIGUEL ANGEL*/
-        /*comentario de Guanter*/
-    
-    
         
         /* PRUEBA DE USO DE LA CLASE GPS */
         btnShowLocation = (Button) findViewById(R.id.button1);
@@ -56,7 +41,7 @@ public class MainActivity extends Activity {
                     
                     Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
                 }else{
-                	//cambio guanter
+
                     gps.showSettingsAlert();
                 }
  
