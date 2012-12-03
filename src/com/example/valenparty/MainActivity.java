@@ -13,7 +13,7 @@ public class MainActivity extends Activity {
         /*Caca de la vaca 7*/
         /*Comentario de prueba POR MI again*/
         /*COMENTARIO MIGUEL ANGEL*/
-        /*comentario de Guanter*/
+        /*comentario de GUANTER*/
     }
 
     @Override
