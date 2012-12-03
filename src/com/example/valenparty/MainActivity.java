@@ -34,16 +34,16 @@ public class MainActivity extends Activity {
  
             @Override
             public void onClick(View arg0) {
-                // create class object
+                // creamos un objeto de la clase
                 gps = new GPSTracker(MainActivity.this);
  
-                // check if GPS enabled
+                // comprobamos si el GPS esta activado
                 if(gps.canGetLocation()){
  
                     double latitude = gps.getLatitude();
                     double longitude = gps.getLongitude();
  
-                    // \n is for new line
+                    
                     Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
                 }else{
                     // can't get location
