@@ -19,8 +19,18 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*Comentario de prueba POR MI again*/
+        /*F*/
+
         /*Caca de la vaca 7*/
         /*Comentario de prueba POR MI again*/
+
+
+        /* COMENTARIO MIGUEL ANGEL*/
+        
+        /*Comentario mio*/
+
         /*COMENTARIO MIGUEL ANGEL*/
         /*comentario de Guanter*/
     
@@ -46,7 +56,7 @@ public class MainActivity extends Activity {
                     
                     Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
                 }else{
-                	//PRUEBA DE MIGUEL ANGEL
+
                     gps.showSettingsAlert();
                 }
  
@@ -64,6 +74,7 @@ public class MainActivity extends Activity {
     
     
     
+
     }
 
     @Override
