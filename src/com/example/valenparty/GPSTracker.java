@@ -13,6 +13,9 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
  
 
 
@@ -182,7 +185,7 @@ public class GPSTracker extends Service implements LocationListener {
         alertDialog.setTitle("GPS is settings");
  
         // Setting Dialog Message
-        alertDialog.setMessage("GPS is not enabled. Do you want to go to settings menu?");
+        alertDialog.setMessage("GPS activado. Do you want to go to settings menu?");
  
         // On pressing Settings button
         alertDialog.setPositiveButton("Settings", new DialogInterface.OnClickListener() {
@@ -224,4 +227,61 @@ public class GPSTracker extends Service implements LocationListener {
         return null;
     }
  
+ 
+    
+    
 }
+
+
+
+/*
+ * 
+ * EJEMPLO DE USO DE ESTA CLASE:
+ * 
+ */
+/* 
+
+Button btnShowLocation;
+
+// clase GPSTracker 
+GPSTracker gps;
+
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    
+    
+    //PRUEBA DE USO DE LA CLASE GPS 
+    btnShowLocation = (Button) findViewById(R.id.button1);
+    
+    // show location button click event
+    btnShowLocation.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+        public void onClick(View arg0) {
+            // creamos un objeto de la clase
+            gps = new GPSTracker(MainActivity.this);
+
+            // comprobamos si el GPS esta activado
+            if(gps.canGetLocation()){
+
+                double latitude = gps.getLatitude();
+                double longitude = gps.getLongitude();
+
+                
+                Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+            }else{
+
+                gps.showSettingsAlert();
+            }
+
+        }
+    });
+    // FIN DE LA PRUEBA DE USO DE LA CLASE GPS 
+    */
+
+
+
