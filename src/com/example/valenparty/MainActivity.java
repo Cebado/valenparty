@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
         /* PRUEBA DE USO DE LA CLASE GPS */
         btnShowLocation = (Button) findViewById(R.id.button1);
         
-        // show location button click event
+        // Evento boton mostrar_ubicacion
         btnShowLocation.setOnClickListener(new View.OnClickListener() {
  
             @Override
