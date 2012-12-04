@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
     }
 
     //LANZAMOS LA VENTANA MAPS
-    public void LaunchMostarMapas(View view) { 
+    public void launchMostrarMapas(View view) { 
     	startActivity(new Intent(this, MapsActivity.class));
     }
 

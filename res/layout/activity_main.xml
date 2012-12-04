@@ -3,27 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo" >
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world"
-        tools:context=".MainActivity" />
-
-    <Button
-        android:id="@+id/button1"
-        style="@style/AppTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="@string/showcoordbutton"
-        android:textColor="@style/AppTheme" />
-
+<!--  
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
@@ -31,7 +11,38 @@
         android:layout_alignLeft="@+id/button1"
         android:layout_alignRight="@+id/button1"
         android:layout_below="@+id/button1"
-        android:onClick="LaunchMostarMapas"
+        android:onClick="LaunchMostrarMapas"
+        android:text="@string/showmaps" />
+
+    <Button
+        android:id="@+id/button1"
+        style="@style/AppTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:text="@string/showcoordbutton"
+        android:textColor="@style/AppTheme" />
+  -->
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="114dp"
+        android:text="@string/showcoordbutton" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="49dp"
+        android:onClick="@string/launchMostrarMapas"
         android:text="@string/showmaps" />
 
 </RelativeLayout>

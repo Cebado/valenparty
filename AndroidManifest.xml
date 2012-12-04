@@ -7,13 +7,14 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="15" />
+    
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme" android:allowBackup="true" android:allowClearUserData="false" android:persistent="false">
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
@@ -23,8 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <uses-library android:name="com.google.android.maps"/>
+      	<uses-library android:name="com.google.android.maps" android:required="true"/>
     </application>
 
-
+<!-- LOS COMENTARIOS SE HACEN ASI  -->
 </manifest>
