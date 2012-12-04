@@ -1,7 +1,10 @@
 package com.example.valenparty;
 
+
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -49,16 +52,6 @@ public class MainActivity extends Activity {
         });
         /* FIN DE LA PRUEBA DE USO DE LA CLASE GPS */
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     }
 
@@ -68,7 +61,10 @@ public class MainActivity extends Activity {
         return true;
     }
 
-
+    //LANZAMOS LA VENTANA MAPS
+    public void LaunchMostarMapas(View view) { 
+    	startActivity(new Intent(this, MapsAvtivity.class));
+    }
 
 
 

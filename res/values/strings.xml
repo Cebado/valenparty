@@ -6,6 +6,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_principal">ValenParty</string>
     <string name="showcoordbutton">Muestra coordenadas</string>
+    <string name="showmaps">Ver Mapa</string>
 
 
 </resources>
