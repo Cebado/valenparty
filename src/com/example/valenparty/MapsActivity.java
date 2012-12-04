@@ -5,7 +5,7 @@ import com.google.android.maps.MapView;
  
 import android.os.Bundle;
 
-public class MapsAvtivity extends MapActivity{
+public class MapsActivity extends MapActivity{
 	
 	private MapView mapa = null;
 
