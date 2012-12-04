@@ -3,6 +3,9 @@ package com.example.valenparty;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapView;
  
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 
 public class MapsActivity extends MapActivity{
@@ -29,9 +32,17 @@ public class MapsActivity extends MapActivity{
 	}
 
 	
-	
-	
-	
+	//FUNCIÓN QUE COMPRUEBA SI HAY INTERNET
+	public boolean isOnline() {
+		ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo netInfo = cm.getActiveNetworkInfo();
+
+		if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+			return true;
+		}
+
+		return false;
+	}
 	
 	
 	
