@@ -1,16 +1,27 @@
 package com.example.valenparty;
 
+import java.text.DecimalFormat;
+
+import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
  
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MapsActivity extends MapActivity{
 	
 	private MapView mapa = null;
+	
+	Button btnCentrar = null;
+	MapController controlMapa = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +35,55 @@ public class MapsActivity extends MapActivity{
         //Mostramos los controles de zoom sobre el mapa
         mapa.setBuiltInZoomControls(true);
         //mapa.setSatellite(true);
+        
+        
+		//Button btnCentrar = null;
+		//MapController controlMapa = null;
+	
+		btnCentrar = (Button) findViewById(R.id.buscameB);
+	
+		controlMapa = mapa.getController();
+	
+		btnCentrar.setOnClickListener(new OnClickListener() {
+			
+		    public void onClick(View arg0) {
+		        //Double latitud = 37.40*1E6;
+		        //Double longitud = -5.99*1E6;
+		        
+		        GPSTracker gps;
+	            gps = new GPSTracker(MapsActivity.this);
+	               
+	                // comprobamos si el GPS esta activado
+	                if(gps.canGetLocation()){
+	 
+	                	double latitud = gps.getLatitude();
+	                	double longitud = gps.getLongitude();
+	                	
+                	
+	    		        GeoPoint mipunto =
+	    			            new GeoPoint((int) (latitud), (int) longitud);
+    			 
+    			        controlMapa.setCenter(mipunto);
+    			        controlMapa.setZoom(10);
+
+    			        Toast.makeText(getApplicationContext(), "Tu posición es - \nLatitud: " + (int) latitud + "\nLongitud: " + (int) longitud, Toast.LENGTH_LONG).show();
+
+	                }else{
+
+	                    gps.showSettingsAlert();
+	                }
+		        
+		
+		    }
+		});
+        
+        
+        
+        
+        
+        
+        
+        
 	}
 
 	@Override
@@ -44,12 +104,33 @@ public class MapsActivity extends MapActivity{
 
 		return false;
 	}
+
 	
+
+/*	public void centrarmeEnMapa(){
+		
+		Button btnCentrar = null;
+		MapController controlMapa = null;
 	
+		btnCentrar = (Button)findViewById(R.id.buscameB);
 	
+		controlMapa = mapa.getController();
 	
+		btnCentrar.setOnClickListener(new OnClickListener() {
+		    @Override
+		    public void onClick(View arg0) {
+		        Double latitud = 37.40*1E6;
+		        Double longitud = -5.99*1E6;
+		 
+		        GeoPoint loc =
+		            new GeoPoint(latitud.intValue(), longitud.intValue());
+		 
+		        controlMapa.setCenter(loc);
+		        controlMapa.setZoom(10);
+		    }
+		});
 	
-	
+	}*/
 	
 	
 }
