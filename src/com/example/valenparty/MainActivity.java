@@ -2,8 +2,11 @@ package com.example.valenparty;
 
 
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
@@ -42,7 +45,7 @@ public class MainActivity extends Activity {
                     double longitude = gps.getLongitude();
  
                     
-                    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Tu posición es - \nLatitud: " + latitude + "\nLongitud: " + longitude, Toast.LENGTH_LONG).show();
                 }else{
 
                     gps.showSettingsAlert();
@@ -60,13 +63,33 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
+    
+    
+    
+    //FUNCIÓN PARA DETECTAR SI HAY CONEXIÓN A INTERNET
+	public boolean isOnline() {
+		ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo netInfo = cm.getActiveNetworkInfo();
 
+		if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+			return true;
+		}
+
+		return false;
+	}
+	
+	
+	
     //LANZAMOS LA VENTANA MAPS
     public void launchMostrarMapas(View view) { 
-    	startActivity(new Intent(this, MapsActivity.class));
+    	
+// NO SE POR QUÉ NO FUNCIONA SI LO PONGO DE MANERA CONDICIONAL A LA CONEXIÓN A INTERNET    	
+//    	if (isOnline()){
+    		startActivity(new Intent(this, MapsActivity.class));
+//    	}else{
+//    		Toast.makeText(getApplicationContext(), "Debes estar conectado a Internet para acceder a esta función", Toast.LENGTH_LONG).show();
+//    	}
     }
-
-
 
 }
 
