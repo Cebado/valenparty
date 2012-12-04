@@ -23,6 +23,7 @@ public class MapsActivity extends MapActivity{
  
         //Mostramos los controles de zoom sobre el mapa
         mapa.setBuiltInZoomControls(true);
+        //mapa.setSatellite(true);
 	}
 
 	@Override

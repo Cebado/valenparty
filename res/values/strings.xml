@@ -8,6 +8,7 @@
     <string name="showcoordbutton">Muestra coordenadas</string>
     <string name="showmaps">Ver Mapa</string>
     <string name="launchMostrarMapas">launchMostrarMapas</string>
+    <string name="boton_buscame">Búscame</string>
 
 
 </resources>
