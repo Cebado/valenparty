@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+    }
         /*Comentario de prueba POR MI again*/
         /*F*/
 
@@ -37,9 +37,11 @@ public class MainActivity extends Activity {
     
         
         /* PRUEBA DE USO DE LA CLASE GPS */
-        btnShowLocation = (Button) findViewById(R.id.button1);
+     //   btnShowLocation = (Button) findViewById(R.id.button1);
         
         // show location button click event
+        
+        /*
         btnShowLocation.setOnClickListener(new View.OnClickListener() {
  
             @Override
@@ -75,7 +77,7 @@ public class MainActivity extends Activity {
     
     
 
-    }
+   
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
