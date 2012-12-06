@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         
-        /* PRUEBA DE USO DE LA CLASE GPS */
+        /* PRUEBA DE USO DE LA CLASE GPS 
         btnShowLocation = (Button) findViewById(R.id.button1);
         
         // Evento boton mostrar_ubicacion
@@ -91,6 +91,24 @@ public class MainActivity extends Activity {
 //    	}
     }
 
+    /*
+		    <!--  #boton para lanzar la activity MapsActivity
+		    <Button
+		        android:id="@+id/button2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentBottom="true"
+		        android:layout_centerHorizontal="true"
+		        android:layout_marginBottom="49dp"
+		        android:onClick="@string/launchMostrarMapas"
+		        android:text="@string/showmaps" />
+			-->
+
+     */
+    
+    
+    
+    
 }
 
 

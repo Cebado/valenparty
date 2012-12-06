@@ -1,6 +1,5 @@
 package com.example.valenparty;
 
-import java.text.DecimalFormat;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
@@ -47,8 +46,8 @@ public class MapsActivity extends MapActivity{
 		btnCentrar.setOnClickListener(new OnClickListener() {
 			
 		    public void onClick(View arg0) {
-		        //Double latitud = 37.40*1E6;
-		        //Double longitud = -5.99*1E6;
+		        //Double latitud = 39.18*1E6;
+		        //Double longitud = -0.34*1E6;
 		        
 		        GPSTracker gps;
 	            gps = new GPSTracker(MapsActivity.this);
@@ -61,12 +60,12 @@ public class MapsActivity extends MapActivity{
 	                	
                 	
 	    		        GeoPoint mipunto =
-	    			            new GeoPoint((int) (latitud), (int) longitud);
+	    			            new GeoPoint((int) (latitud*1000000), (int) (longitud*1000000));
     			 
     			        controlMapa.setCenter(mipunto);
-    			        controlMapa.setZoom(10);
+    			        controlMapa.setZoom(19);
 
-    			        Toast.makeText(getApplicationContext(), "Tu posición es - \nLatitud: " + (int) latitud + "\nLongitud: " + (int) longitud, Toast.LENGTH_LONG).show();
+    			        Toast.makeText(getApplicationContext(), "Tu posición es - \nLatitud: " + (int) (latitud*1000000) + "\nLongitud: " + (int) (longitud*1000000), Toast.LENGTH_LONG).show();
 
 	                }else{
 
@@ -76,14 +75,10 @@ public class MapsActivity extends MapActivity{
 		
 		    }
 		});
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
 	}
 
 	@Override
@@ -92,7 +87,7 @@ public class MapsActivity extends MapActivity{
 		return false;
 	}
 
-	
+
 	//FUNCIÓN QUE COMPRUEBA SI HAY INTERNET
 	public boolean isOnline() {
 		ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -108,29 +103,28 @@ public class MapsActivity extends MapActivity{
 	
 
 /*	public void centrarmeEnMapa(){
-		
+
 		Button btnCentrar = null;
 		MapController controlMapa = null;
-	
+
 		btnCentrar = (Button)findViewById(R.id.buscameB);
-	
+
 		controlMapa = mapa.getController();
-	
+
 		btnCentrar.setOnClickListener(new OnClickListener() {
 		    @Override
 		    public void onClick(View arg0) {
 		        Double latitud = 37.40*1E6;
 		        Double longitud = -5.99*1E6;
-		 
+
 		        GeoPoint loc =
 		            new GeoPoint(latitud.intValue(), longitud.intValue());
-		 
+
 		        controlMapa.setCenter(loc);
 		        controlMapa.setZoom(10);
 		    }
 		});
-	
+
 	}*/
-	
-	
+
 }

@@ -4,15 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo" >
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="114dp"
-        android:text="@string/showcoordbutton" />
-
+<!--  #boton para lanzar la activity MapsActivity
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
@@ -22,5 +14,7 @@
         android:layout_marginBottom="49dp"
         android:onClick="@string/launchMostrarMapas"
         android:text="@string/showmaps" />
+-->
+
 
 </RelativeLayout>
