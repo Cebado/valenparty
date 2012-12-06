@@ -85,13 +85,7 @@ public class MainActivity extends Activity {
 	
     //LANZAMOS LA VENTANA MAPS
     public void launchMostrarMapas(View view) { 
-    	
-// NO SE POR QUÉ NO FUNCIONA SI LO PONGO DE MANERA CONDICIONAL A LA CONEXIÓN A INTERNET    	
-//    	if (isOnline()){
-    		startActivity(new Intent(this, MapsActivity.class));
-//    	}else{
-//    		Toast.makeText(getApplicationContext(), "Debes estar conectado a Internet para acceder a esta función", Toast.LENGTH_LONG).show();
-//    	}
+    	startActivity(new Intent(this, MapsActivity.class));
     }
     
     
@@ -99,7 +93,12 @@ public class MainActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item){
     	switch (item.getItemId()) {
 		case R.id.itemmenumaps:
-			launchMostrarMapas(null);
+	    	//if (isOnline()){ //si hay conexión a internet lo mostramos, sinó no
+	    		launchMostrarMapas(null);
+	    	//}else{
+	    	//	Toast.makeText(getApplicationContext(), "Debes estar conectado a Internet para acceder a esta función", Toast.LENGTH_LONG).show();
+	    	//}
+			
 			break;
 		case R.id.menu_settings:
 			//quien quiera que cargue otro Activity aquí;
