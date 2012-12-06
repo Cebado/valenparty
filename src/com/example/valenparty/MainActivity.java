@@ -2,6 +2,8 @@ package com.example.valenparty;
 
 
 
+
+
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -27,7 +30,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         
-        /* PRUEBA DE USO DE LA CLASE GPS */
+        /* PRUEBA DE USO DE LA CLASE GPS 
         btnShowLocation = (Button) findViewById(R.id.button1);
         
         // Evento boton mostrar_ubicacion
@@ -90,7 +93,45 @@ public class MainActivity extends Activity {
 //    		Toast.makeText(getApplicationContext(), "Debes estar conectado a Internet para acceder a esta función", Toast.LENGTH_LONG).show();
 //    	}
     }
+    
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+    	switch (item.getItemId()) {
+		case R.id.itemmenumaps:
+			launchMostrarMapas(null);
+			break;
+		case R.id.menu_settings:
+			//quien quiera que cargue otro Activity aquí;
+			break;	
 
+		default:
+			break;
+		}
+		return false;
+    }
+    
+    
+    
+
+    /*
+		    <!--  #boton para lanzar la activity MapsActivity
+		    <Button
+		        android:id="@+id/button2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentBottom="true"
+		        android:layout_centerHorizontal="true"
+		        android:layout_marginBottom="49dp"
+		        android:onClick="@string/launchMostrarMapas"
+		        android:text="@string/showmaps" />
+			-->
+
+     */
+    
+    
+    
+    
 }
 
 
