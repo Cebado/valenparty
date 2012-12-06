@@ -6,10 +6,13 @@ import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
  
+import android.content.ClipData.Item;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -61,9 +64,23 @@ public class MapsActivity extends MapActivity{
                 	
 	    		        GeoPoint mipunto =
 	    			            new GeoPoint((int) (latitud*1000000), (int) (longitud*1000000));
-    			 
+	    		        
+	    		       
     			        controlMapa.setCenter(mipunto);
     			        controlMapa.setZoom(19);
+    			        
+    			        
+    			     /*
+    			            controlMapa.animateTo(mipunto);
+    			     
+    			            int zoomActual = mapa.getZoomLevel();
+    			     
+    			            for(int i=zoomActual; i<19; i++)
+    			                controlMapa.zoomIn();
+    			        
+    			        */
+    			        
+    			        
 
     			        Toast.makeText(getApplicationContext(), "Tu posición es - \nLatitud: " + (int) (latitud*1000000) + "\nLongitud: " + (int) (longitud*1000000), Toast.LENGTH_LONG).show();
 
@@ -76,11 +93,50 @@ public class MapsActivity extends MapActivity{
 		    }
 		});
 
-
-
-
 	}
 
+	
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.maps_activity, menu);
+        return true;
+    }
+	
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+    	switch (item.getItemId()) {
+		case R.id.vista_satelite:
+			MenuItem vistaSat = null;
+			vistaSat = (MenuItem) findViewById(R.id.vista_satelite);
+			if (vistaSat.isChecked()){
+				vistaSat.setChecked(false);
+				//cambiamos la variable global que regula esto
+			}else{
+				vistaSat.setChecked(true);
+				//cambiamos la variable global que regula esto
+			}
+			
+			break;
+		case R.id.anim_activ:
+			MenuItem activaAnim = null;
+			activaAnim = (MenuItem) findViewById(R.id.anim_activ);
+			if (activaAnim.isChecked()){
+				activaAnim.setChecked(false);
+				//cambiamos la variable global que regula esto
+			}else{
+				activaAnim.setChecked(true);
+				//cambiamos la variable global que regula esto
+			}
+			
+			break;	
+
+		default:
+			break;
+		}
+		return false;
+    }
+	
+	
 	@Override
 	protected boolean isRouteDisplayed() {
 		// TODO Auto-generated method stub

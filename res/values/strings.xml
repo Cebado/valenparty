@@ -10,6 +10,10 @@
     <string name="launchMostrarMapas">launchMostrarMapas</string>
     <string name="boton_buscame">Búscame</string>
     <string name="testmapas_m">Test Mapas</string>
+    <string name="maps_menu_animacion">Animaciones</string>
+    <string name="submen_maps_activado_anim">Activado</string>
+    <string name="menu_map_options">Opciones de mapas</string>
+    <string name="menu_vista_satelite">Vista satélite</string>
 
 
 </resources>
