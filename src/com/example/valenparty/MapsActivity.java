@@ -102,29 +102,30 @@ public class MapsActivity extends MapActivity{
         return true;
     }
 	
+
+	
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
     	switch (item.getItemId()) {
 		case R.id.vista_satelite:
-			MenuItem vistaSat = null;
-			vistaSat = (MenuItem) findViewById(R.id.vista_satelite);
-			if (vistaSat.isChecked()){
-				vistaSat.setChecked(false);
+
+			if (item.isChecked()){
+				item.setChecked(false);
 				//cambiamos la variable global que regula esto
 			}else{
-				vistaSat.setChecked(true);
+				item.setChecked(true);
 				//cambiamos la variable global que regula esto
 			}
 			
+			
 			break;
 		case R.id.anim_activ:
-			MenuItem activaAnim = null;
-			activaAnim = (MenuItem) findViewById(R.id.anim_activ);
-			if (activaAnim.isChecked()){
-				activaAnim.setChecked(false);
+
+			if (item.isChecked()){
+				item.setChecked(false);
 				//cambiamos la variable global que regula esto
 			}else{
-				activaAnim.setChecked(true);
+				item.setChecked(true);
 				//cambiamos la variable global que regula esto
 			}
 			
