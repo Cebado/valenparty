@@ -113,7 +113,7 @@ public class MapsActivity extends MapActivity{
 	                GeoPoint caGus = new GeoPoint (39119540,-452542);
 	                GeoPoint caPau = new GeoPoint (39510444,-318405);
 	                
-	                Amigo yo = new Amigo("Miguel Angel", "mipegir",mipunto,null,null,"muy Hombre" );
+	                Amigo yo = new Amigo("YO", "mipegir",mipunto,null,null,"muy Hombre" );
 	                Amigo Gustavo = new Amigo("Gustavo", "guslandu",caGus,null,null,"un poco nenaza" );
 	                Amigo Pau = new Amigo("Pau", "pamullo",caPau,null,null,"muy nenaza" );
 	                
