@@ -1,8 +1,5 @@
 package com.example.valenparty;
 
-
-import java.util.Iterator;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -201,3 +198,4 @@ public class MyInfoExtraMaps extends Overlay  {
  * 
  * 
  * */
+
