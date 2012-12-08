@@ -1,0 +1,67 @@
+package com.example.valenparty;
+
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas; //Para dibujar sobre una capa
+import android.graphics.Color;  //Colores predefinidos
+import android.graphics.Paint;  //Para dibujar
+import android.graphics.Point;  //un punto en la matriz de pixeles
+import android.util.Log;
+
+
+import com.google.android.maps.GeoPoint;   //Estructura de Coordenadas lat. y long.
+import com.google.android.maps.MapView;    //El mapa que se muestra
+import com.google.android.maps.Overlay;    //La capa donde se ha de pintar
+import com.google.android.maps.Projection; //Para hacer la conversion entre pixeles y coordenadas
+
+
+
+public class MyInfoExtraMaps extends Overlay  {
+    public GeoPoint puntoX = null;
+    
+ 
+    public MyInfoExtraMaps(GeoPoint mipunto) {
+    	puntoX= new GeoPoint(mipunto.getLatitudeE6(), mipunto.getLongitudeE6());
+		
+	}
+
+	@Override
+    public void draw(Canvas canvas, MapView mapView, boolean shadow)
+    {
+        Projection projection = mapView.getProjection();
+        //GeoPoint puntoMaps =
+        //    new GeoPoint(MapsActivity.mipunto.getLatitudeE6(), MapsActivity.mipunto.getLongitudeE6());
+        Log.d("DEBUG*", "LATITUD: "+ puntoX.toString() + "\tLONGITUD: "+ puntoX.toString());
+        
+        //Toast.makeText(getBaseContext(R.layout.maps_activity), "Tu posición es - \nLatitud: " + (int) (MapsActivity.mipunto.getLatitudeE6()) + "\nLongitud: " + (int) (MapsActivity.mipunto.getLongitudeE6()), Toast.LENGTH_LONG).show();
+        //imprimir por salida de error
+        
+        
+        if (shadow == false)
+        {
+            Point centro = new Point();
+           
+            projection.toPixels(puntoX, centro);
+ 
+            //Definimos el pincel de dibujo
+            Paint p = new Paint();
+            p.setColor(Color.BLUE);
+ 
+            //Círculo y Texto
+            //canvas.drawCircle(centro.x, centro.y, 10, p);
+            canvas.drawText("Yo", centro.x+5, centro.y+45, p);
+            
+            
+          //Carita
+            Bitmap bm = BitmapFactory.decodeResource(
+                    mapView.getResources(),
+                    R.drawable.amigo);
+             
+            canvas.drawBitmap(bm, centro.x ,//- bm.getWidth()
+                    centro.y, p);// - bm.getHeight()
+        }
+    }
+
+
+}
