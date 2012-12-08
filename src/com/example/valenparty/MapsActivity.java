@@ -1,12 +1,15 @@
 package com.example.valenparty;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
- 
-import android.content.ClipData.Item;
+import com.google.android.maps.Overlay;
+
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -20,7 +23,11 @@ import android.widget.Toast;
 
 public class MapsActivity extends MapActivity{
 	
+	protected static GeoPoint mipunto = null;
 	private MapView mapa = null;
+	private boolean vistaSatelite = false;
+	private boolean desplazaAnimado = false;
+	public static List<Amigo> listaAmigos = new ArrayList<Amigo>();
 	
 	Button btnCentrar = null;
 	MapController controlMapa = null;
@@ -36,11 +43,20 @@ public class MapsActivity extends MapActivity{
  
         //Mostramos los controles de zoom sobre el mapa
         mapa.setBuiltInZoomControls(true);
-        //mapa.setSatellite(true);
+        
+        //Mostramos la vista Satelite dependiendo de la configuracion puesta
+        if (!vistaSatelite){
+        	mapa.setSatellite(false);
+        }else{
+        	mapa.setSatellite(false);
+        }
+       
+       
         
         
-		//Button btnCentrar = null;
-		//MapController controlMapa = null;
+        
+        
+        
 	
 		btnCentrar = (Button) findViewById(R.id.buscameB);
 	
@@ -61,26 +77,24 @@ public class MapsActivity extends MapActivity{
 	                	double latitud = gps.getLatitude();
 	                	double longitud = gps.getLongitude();
 	                	
+	                	
+
                 	
-	    		        GeoPoint mipunto =
+	    		        mipunto =
 	    			            new GeoPoint((int) (latitud*1000000), (int) (longitud*1000000));
 	    		        
-	    		       
-    			        controlMapa.setCenter(mipunto);
-    			        controlMapa.setZoom(19);
-    			        
-    			        
-    			     /*
-    			            controlMapa.animateTo(mipunto);
-    			     
+	    		       if (!desplazaAnimado){
+	    		    	   controlMapa.setCenter(mipunto);
+	    		    	   controlMapa.setZoom(19);
+	    		       }else{
+	    		    	    controlMapa.animateTo(mipunto);
     			            int zoomActual = mapa.getZoomLevel();
     			     
     			            for(int i=zoomActual; i<19; i++)
     			                controlMapa.zoomIn();
+	    		       }
     			        
-    			        */
-    			        
-    			        
+  			        
 
     			        Toast.makeText(getApplicationContext(), "Tu posición es - \nLatitud: " + (int) (latitud*1000000) + "\nLongitud: " + (int) (longitud*1000000), Toast.LENGTH_LONG).show();
 
@@ -88,7 +102,45 @@ public class MapsActivity extends MapActivity{
 
 	                    gps.showSettingsAlert();
 	                }
-		        
+	                
+	                
+	                /*
+	                 * COMPLETAMOS LA LISTA DE AMIGOS
+	                 * http://maps.google.es/?ll=39.11954,-0.452542&spn=0.010088,0.01929&t=h&z=16
+	                 * http://maps.google.es/?ll=39.510444,-0.318405&spn=0.002508,0.004823&t=h&z=18
+	                 * */
+	                
+	                GeoPoint caGus = new GeoPoint (39119540,-452542);
+	                GeoPoint caPau = new GeoPoint (39510444,-318405);
+	                
+	                Amigo yo = new Amigo("Miguel Angel", "mipegir",mipunto,null,null,"muy Hombre" );
+	                Amigo Gustavo = new Amigo("Gustavo", "guslandu",caGus,null,null,"un poco nenaza" );
+	                Amigo Pau = new Amigo("Pau", "pamullo",caPau,null,null,"muy nenaza" );
+	                
+	                listaAmigos.add(yo);
+	                listaAmigos.add(Gustavo);
+	                listaAmigos.add(Pau);
+	                
+	                
+	                
+	                
+	                /*
+	                 * MOSTRAR CAPAS
+	                 * 
+	                 * 
+	                 */
+	                
+	              //Añadimos la capa de marcadores
+	                List<Overlay> capas = mapa.getOverlays();
+	                MyInfoExtraMaps minfo = new MyInfoExtraMaps(mipunto);
+	                capas.add(minfo);
+	                mapa.postInvalidate();
+	                
+	                
+	                /**
+	                 *  FIN MOSTRAR CAPAS
+	                 * 
+	                 * */
 		
 		    }
 		});
@@ -112,9 +164,12 @@ public class MapsActivity extends MapActivity{
 			if (item.isChecked()){
 				item.setChecked(false);
 				//cambiamos la variable global que regula esto
+				vistaSatelite = false;
+				
 			}else{
 				item.setChecked(true);
 				//cambiamos la variable global que regula esto
+				vistaSatelite = true;
 			}
 			
 			
@@ -124,16 +179,26 @@ public class MapsActivity extends MapActivity{
 			if (item.isChecked()){
 				item.setChecked(false);
 				//cambiamos la variable global que regula esto
+				desplazaAnimado = false;
 			}else{
 				item.setChecked(true);
 				//cambiamos la variable global que regula esto
+				desplazaAnimado = true;
 			}
 			
 			break;	
 
 		default:
+
 			break;
 		}
+    	
+        if (!vistaSatelite){
+        	mapa.setSatellite(false);
+        }else{
+        	mapa.setSatellite(true);
+        }
+    	
 		return false;
     }
 	
@@ -159,29 +224,6 @@ public class MapsActivity extends MapActivity{
 
 	
 
-/*	public void centrarmeEnMapa(){
 
-		Button btnCentrar = null;
-		MapController controlMapa = null;
-
-		btnCentrar = (Button)findViewById(R.id.buscameB);
-
-		controlMapa = mapa.getController();
-
-		btnCentrar.setOnClickListener(new OnClickListener() {
-		    @Override
-		    public void onClick(View arg0) {
-		        Double latitud = 37.40*1E6;
-		        Double longitud = -5.99*1E6;
-
-		        GeoPoint loc =
-		            new GeoPoint(latitud.intValue(), longitud.intValue());
-
-		        controlMapa.setCenter(loc);
-		        controlMapa.setZoom(10);
-		    }
-		});
-
-	}*/
 
 }
