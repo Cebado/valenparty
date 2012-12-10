@@ -7,4 +7,5 @@
         android:menuCategory="alternative"
         android:title="@string/testmapas_m"
         android:showAsAction="always" />
+
 </menu>
