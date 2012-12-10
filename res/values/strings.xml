@@ -6,6 +6,25 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_principal">ValenParty</string>
     <string name="showcoordbutton">Muestra coordenadas</string>
-
-
+    <string name="showmaps">Ver Mapa</string>
+    <string name="launchMostrarMapas">launchMostrarMapas</string>
+    <string name="boton_buscame">Búscame</string>
+    <string name="testmapas_m">Test Mapas</string>
+    <string name="maps_menu_animacion">Animaciones</string>
+    <string name="submen_maps_activado_anim">Animaciones activadas</string>
+    <string name="menu_map_options">Opciones de mapas</string>
+    <string name="menu_vista_satelite">Vista satélite</string>
+    <string name="fiesta">Me voy de fiesta</string>
+    <string name="Mamigos">Buscar amigos</string>
+    <string name="Gamigos">Gestión amigos</string>
+    <string name="Facebook">Facebook</string>
+    <string name="Twitter">  Twitter</string>
+    <string name="title_activity_lista_lugares">Lista_lugares</string>
+    <string name="sitios">Lista de discotecas</string>
+    <string name="namesitio">Nombre</string>
+    <string name="direccionsitio">Direccion</string>
+    <string name="localidadsitio">Localidad</string>
+    <string name="sitio1nombre">Superclub</string>
+    <string name="sitio1direccion">C/San Vicente, 95</string>
+    <string name="sitio1localidad">Valencia</string>
 </resources>
