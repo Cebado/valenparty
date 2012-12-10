@@ -83,9 +83,26 @@ public class MyInfoExtraMaps extends Overlay  {
 	@Override
 	public boolean onTap(GeoPoint point, MapView mapView) 
 	{
+		int i;
 		Context contexto = mapView.getContext();
-		Toast toast = Toast.makeText(contexto, "Amigo", Toast.LENGTH_SHORT);
-		toast.show();
+		for(i=0;i<MapsActivity.listaAmigos.size();i++){
+			Log.d("DEBUGGER","Pulsacion en pantalla");
+			
+			
+			
+			
+			if (point.hashCode() == MapsActivity.listaAmigos.get(i).getLocAmigo().hashCode()){
+				
+				Log.d("DEBUGGER","PASAMOS DENTRO");
+				Toast toast = Toast.makeText(contexto, MapsActivity.listaAmigos.get(i).getNick().toUpperCase() 
+						+ "\n" + "Nmbre: " + MapsActivity.listaAmigos.get(i).getNombrePublico() 
+						+ "\n" + "IP: " + MapsActivity.listaAmigos.get(i).getIp() 
+						+ "\n" + "Extra: " + MapsActivity.listaAmigos.get(i).getSexo()
+						+ "\n" +"Estado: "+ "Desconectado", Toast.LENGTH_SHORT);
+				toast.show();
+			}
+		}
+
 		
 		return true;
 	}
