@@ -10,13 +10,22 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.view.Menu;
-import android.view.MenuItem;
+//import android.view.Menu;
+//import android.view.MenuItem;
 import android.view.View;
+
+
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem;
+
+
+
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends SherlockActivity {
 
     Button btnShowLocation;
     
@@ -63,7 +72,9 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
+    	MenuInflater inflater = getSupportMenuInflater();
+    	inflater.inflate(R.menu.activity_main, menu);
+       // getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
     
