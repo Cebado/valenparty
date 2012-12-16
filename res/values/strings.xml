@@ -1,7 +1,7 @@
 
 <resources>
 
-    <string name="app_name">valenparty</string>
+    <string name="app_name">Valenparty</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
