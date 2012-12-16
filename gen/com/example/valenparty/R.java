@@ -676,6 +676,7 @@ containing a value of this type.
         public static final int abs__split_action_bar_is_narrow=0x7f050001;
     }
     public static final class color {
+        public static final int Blanco=0x7f060009;
         public static final int abs__background_holo_dark=0x7f060000;
         public static final int abs__background_holo_light=0x7f060001;
         public static final int abs__bright_foreground_disabled_holo_dark=0x7f060004;
@@ -685,10 +686,10 @@ containing a value of this type.
         public static final int abs__bright_foreground_inverse_holo_dark=0x7f060006;
         public static final int abs__bright_foreground_inverse_holo_light=0x7f060007;
         public static final int abs__holo_blue_light=0x7f060008;
-        public static final int abs__primary_text_disable_only_holo_dark=0x7f060009;
-        public static final int abs__primary_text_disable_only_holo_light=0x7f06000a;
-        public static final int abs__primary_text_holo_dark=0x7f06000b;
-        public static final int abs__primary_text_holo_light=0x7f06000c;
+        public static final int abs__primary_text_disable_only_holo_dark=0x7f06000a;
+        public static final int abs__primary_text_disable_only_holo_light=0x7f06000b;
+        public static final int abs__primary_text_holo_dark=0x7f06000c;
+        public static final int abs__primary_text_holo_light=0x7f06000d;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -937,12 +938,14 @@ containing a value of this type.
         public static final int gowalla_mdpi=0x7f020080;
         public static final int ic_action_search=0x7f020081;
         public static final int ic_launcher=0x7f020082;
-        public static final int twitter_128x128_32=0x7f020083;
-        public static final int twitter_hdpi=0x7f020084;
-        public static final int twitter_ldpi=0x7f020085;
-        public static final int twitter_mdpi=0x7f020086;
+        public static final int start=0x7f020083;
+        public static final int twitter_128x128_32=0x7f020084;
+        public static final int twitter_hdpi=0x7f020085;
+        public static final int twitter_ldpi=0x7f020086;
+        public static final int twitter_mdpi=0x7f020087;
     }
     public static final class id {
+        public static final int Button01=0x7f040040;
         public static final int abs__action_bar=0x7f040022;
         public static final int abs__action_bar_container=0x7f040021;
         public static final int abs__action_bar_subtitle=0x7f040011;
@@ -983,23 +986,40 @@ containing a value of this type.
         public static final int abs__title=0x7f04001b;
         public static final int abs__titleDivider=0x7f04001c;
         public static final int abs__up=0x7f04000b;
-        public static final int anim_activ=0x7f040039;
-        public static final int buscameB=0x7f040033;
+        public static final int anim_activ=0x7f04004b;
+        public static final int buscameB=0x7f040045;
         public static final int disableHome=0x7f040009;
         public static final int edit_query=0x7f040027;
         public static final int homeAsUp=0x7f040006;
-        public static final int itemmenumaps=0x7f040036;
+        public static final int imageButton1=0x7f04003f;
+        public static final int imageButton2=0x7f040041;
+        public static final int imageButton3=0x7f040043;
+        public static final int imageButton4=0x7f040042;
+        public static final int imageButton5=0x7f040044;
+        public static final int itemmenumaps=0x7f040048;
         public static final int listMode=0x7f040002;
-        public static final int mapa=0x7f040034;
-        public static final int menu_animacion=0x7f040037;
-        public static final int menu_settings=0x7f040035;
+        public static final int mapa=0x7f040046;
+        public static final int menu_animacion=0x7f040049;
+        public static final int menu_settings=0x7f040047;
         public static final int normal=0x7f040001;
         public static final int showCustom=0x7f040008;
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
         public static final int tabMode=0x7f040003;
+        public static final int tableRow1=0x7f040033;
+        public static final int tableRow2=0x7f040037;
+        public static final int tableRow3=0x7f040039;
+        public static final int tableRow4=0x7f04003d;
+        public static final int textView1=0x7f040034;
+        public static final int textView2=0x7f040035;
+        public static final int textView3=0x7f040036;
+        public static final int textView4=0x7f04003e;
+        public static final int textView5=0x7f04003a;
+        public static final int textView6=0x7f04003b;
+        public static final int textView7=0x7f04003c;
+        public static final int textView8=0x7f040038;
         public static final int useLogo=0x7f040004;
-        public static final int vista_satelite=0x7f040038;
+        public static final int vista_satelite=0x7f04004a;
         public static final int wrap_content=0x7f040000;
     }
     public static final class integer {
@@ -1029,16 +1049,22 @@ containing a value of this type.
         public static final int abs__search_dropdown_item_icons_2line=0x7f030014;
         public static final int abs__search_view=0x7f030015;
         public static final int abs__simple_dropdown_hint=0x7f030016;
-        public static final int activity_main=0x7f030017;
-        public static final int maps_activity=0x7f030018;
-        public static final int sherlock_spinner_dropdown_item=0x7f030019;
-        public static final int sherlock_spinner_item=0x7f03001a;
+        public static final int activity_lista_lugares=0x7f030017;
+        public static final int activity_main=0x7f030018;
+        public static final int maps_activity=0x7f030019;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001a;
+        public static final int sherlock_spinner_item=0x7f03001b;
     }
     public static final class menu {
-        public static final int activity_main=0x7f0b0000;
-        public static final int maps_activity=0x7f0b0001;
+        public static final int activity_lista_lugares=0x7f0b0000;
+        public static final int activity_main=0x7f0b0001;
+        public static final int maps_activity=0x7f0b0002;
     }
     public static final class string {
+        public static final int Facebook=0x7f090020;
+        public static final int Gamigos=0x7f09001f;
+        public static final int Mamigos=0x7f09001e;
+        public static final int Twitter=0x7f090021;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abs__action_bar_home_description=0x7f090000;
@@ -1086,17 +1112,26 @@ containing a value of this type.
         public static final int abs__shareactionprovider_share_with_application=0x7f090009;
         public static final int app_name=0x7f09000f;
         public static final int boton_buscame=0x7f090017;
-        public static final int buscamebutton=0x7f09001d;
+        public static final int buscamebutton=0x7f09002a;
+        public static final int direccionsitio=0x7f090025;
+        public static final int fiesta=0x7f09001d;
         public static final int hello_world=0x7f090010;
         public static final int launchMostrarMapas=0x7f090016;
+        public static final int localidadsitio=0x7f090026;
         public static final int maps_menu_animacion=0x7f090019;
         public static final int menu_map_options=0x7f09001b;
         public static final int menu_settings=0x7f090011;
         public static final int menu_vista_satelite=0x7f09001c;
+        public static final int namesitio=0x7f090024;
         public static final int showcoordbutton=0x7f090014;
         public static final int showmaps=0x7f090015;
+        public static final int sitio1direccion=0x7f090028;
+        public static final int sitio1localidad=0x7f090029;
+        public static final int sitio1nombre=0x7f090027;
+        public static final int sitios=0x7f090023;
         public static final int submen_maps_activado_anim=0x7f09001a;
         public static final int testmapas_m=0x7f090018;
+        public static final int title_activity_lista_lugares=0x7f090022;
         public static final int title_activity_main=0x7f090012;
         public static final int title_activity_principal=0x7f090013;
     }
@@ -1104,6 +1139,7 @@ containing a value of this type.
         public static final int AppTheme=0x7f0a0059;
         public static final int DialogWindowTitle_Sherlock=0x7f0a0036;
         public static final int DialogWindowTitle_Sherlock_Light=0x7f0a0037;
+        public static final int PruebaMain=0x7f0a005a;
         public static final int Sherlock___TextAppearance_Small=0x7f0a004a;
         public static final int Sherlock___Theme=0x7f0a004e;
         public static final int Sherlock___Theme_DarkActionBar=0x7f0a0050;

@@ -7,14 +7,17 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="15" />
-    
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:allowBackup="true"
+        android:allowClearUserData="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.Sherlock" android:allowBackup="true" android:allowClearUserData="false" android:persistent="false">
+        android:persistent="false"
+        android:theme="@style/Theme.Sherlock" >
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
@@ -27,10 +30,24 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_main" >
-            
         </activity>
-      	<uses-library android:name="com.google.android.maps" android:required="true"/>
+
+        <uses-library
+            android:name="com.google.android.maps"
+            android:required="true" />
+
+        <activity
+            android:name=".Lista_lugares"
+            android:label="@string/title_activity_lista_lugares" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
-<!-- LOS COMENTARIOS SE HACEN ASI  -->
+    <!-- LOS COMENTARIOS SE HACEN ASI -->
+
 </manifest>
+
