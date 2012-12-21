@@ -67,7 +67,7 @@ public class MainActivity extends SherlockActivity {
                     double longitude = gps.getLongitude();
  
                     
-                    Toast.makeText(getApplicationContext(), "Tu posición es - \nLatitud: " + latitude + "\nLongitud: " + longitude, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Tu posiciï¿½n es - \nLatitud: " + latitude + "\nLongitud: " + longitude, Toast.LENGTH_LONG).show();
                 }else{
 
                     gps.showSettingsAlert();
@@ -92,7 +92,7 @@ public class MainActivity extends SherlockActivity {
     
     
     
-    //FUNCIÓN PARA DETECTAR SI HAY CONEXIÓN A INTERNET
+    //FUNCIï¿½N PARA DETECTAR SI HAY CONEXIï¿½N A INTERNET
 	public boolean isOnline() {
 		ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo netInfo = cm.getActiveNetworkInfo();
@@ -116,17 +116,20 @@ public class MainActivity extends SherlockActivity {
     public boolean onOptionsItemSelected(MenuItem item){
     	switch (item.getItemId()) {
 		case R.id.itemmenumaps:
-	    	//if (isOnline()){ //si hay conexión a internet lo mostramos, sinó no
+	    	//if (isOnline()){ //si hay conexiï¿½n a internet lo mostramos, sinï¿½ no
 	    		launchMostrarMapas(null);
 	    	//}else{
-	    	//	Toast.makeText(getApplicationContext(), "Debes estar conectado a Internet para acceder a esta función", Toast.LENGTH_LONG).show();
+	    	//	Toast.makeText(getApplicationContext(), "Debes estar conectado a Internet para acceder a esta funciï¿½n", Toast.LENGTH_LONG).show();
 	    	//}
 			
 			break;
 		case R.id.menu_settings:
-			//quien quiera que cargue otro Activity aquí;
+			//quien quiera que cargue otro Activity aquï¿½;
 			break;	
-
+		
+		case R.id.creditos_settings:
+			//quien quiera que cargue otro Activity aquï¿½;
+			break;	
 		default:
 			break;
 		}

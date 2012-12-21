@@ -3,9 +3,14 @@
         android:title="@string/menu_settings"
         android:orderInCategory="100"
         android:showAsAction="never" />
+  
+    <item android:id="@+id/creditos_settings"
+        android:title="@string/menu_creditos"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+    
     <item android:id="@+id/itemmenumaps"
         android:menuCategory="alternative"
-
         android:title="@string/testmapas_m"
         android:showAsAction="always" />
 

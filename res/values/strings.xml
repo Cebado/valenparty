@@ -28,5 +28,6 @@
     <string name="sitio1nombre">Superclub</string>
     <string name="sitio1direccion">C/San Vicente, 95</string>
     <string name="sitio1localidad">Valencia</string>
+    <string name="menu_creditos">Créditos</string>
 </resources>
 
