@@ -7,7 +7,7 @@
     <item android:id="@+id/creditos_settings"
         android:title="@string/menu_creditos"
         android:orderInCategory="100"
-        android:showAsAction="never" />
+        android:showAsAction="never"/>
     
     <item android:id="@+id/itemmenumaps"
         android:menuCategory="alternative"

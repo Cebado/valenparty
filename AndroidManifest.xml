@@ -31,6 +31,11 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_main" >
         </activity>
+        
+         <activity
+            android:name=".CreditosActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
 
         <uses-library
             android:name="com.google.android.maps"
@@ -39,11 +44,6 @@
         <activity
             android:name=".Lista_lugares"
             android:label="@string/title_activity_lista_lugares" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

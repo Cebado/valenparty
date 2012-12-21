@@ -34,7 +34,6 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
-
 public class MainActivity extends SherlockActivity {
 
     Button btnShowLocation;
@@ -128,7 +127,7 @@ public class MainActivity extends SherlockActivity {
 			break;	
 		
 		case R.id.creditos_settings:
-			//quien quiera que cargue otro Activity aqu�;
+		    	startActivity(new Intent(MainActivity.this, CreditosActivity.class));
 			break;	
 		default:
 			break;
