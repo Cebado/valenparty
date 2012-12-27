@@ -10,6 +10,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:allowBackup="true"
@@ -18,15 +19,20 @@
         android:label="@string/app_name"
         android:persistent="false"
         android:theme="@style/Theme.Sherlock" >
+        
+        <uses-library
+            android:name="com.google.android.maps"
+            android:required="true" />
+        
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_main" >
@@ -37,14 +43,11 @@
             android:label="@string/title_activity_main" >
         </activity>
 
-        <uses-library
-            android:name="com.google.android.maps"
-            android:required="true" />
-
         <activity
             android:name=".Lista_lugares"
             android:label="@string/title_activity_lista_lugares" >
         </activity>
+        
     </application>
 
     <!-- LOS COMENTARIOS SE HACEN ASI -->
