@@ -7,7 +7,6 @@ package com.example.valenparty;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
@@ -22,21 +21,12 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
-
-
-
 import android.widget.Button;
-import android.widget.Toast;
-
-
-import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
-import com.actionbarsherlock.view.MenuItem;
 
 public class MainActivity extends SherlockActivity {
 
     Button btnShowLocation;
+    Button botongestionamigos;
     
     // clase GPSTracker 
     GPSTracker gps;
@@ -46,7 +36,16 @@ public class MainActivity extends SherlockActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+  
+        botongestionamigos = (Button) findViewById(R.id.imageButton3);
+        
+        // Evento boton gestor contactos
+        botongestionamigos.setOnClickListener(new View.OnClickListener() {
+ 
+            public void onClick(View arg0) {
+            	startActivity(new Intent(MainActivity.this, gestor_amigos.class));
+            }
+        });
         
         /* PRUEBA DE USO DE LA CLASE GPS 
         btnShowLocation = (Button) findViewById(R.id.button1);
