@@ -1,5 +1,9 @@
 package com.example.valenparty;
 
+
+
+
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -64,7 +68,7 @@ public class MyInfoExtraMaps extends Overlay  {
 	          //Carita
 	            //if(MapsActivity.listaAmigos.get(i).getFotoAmigo()==null){
 		            Bitmap bm = BitmapFactory.decodeResource(
-		                    mapView.getResources(),
+		                    mapView.getResources(), 
 		                    R.drawable.amigo);
 		             
 		            canvas.drawBitmap(bm, centro.x ,//- bm.getWidth()
