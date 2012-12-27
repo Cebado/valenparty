@@ -23,45 +23,38 @@ import android.widget.Toast;
 
 public class MapsActivity extends MapActivity{
 	
-	protected static GeoPoint mipunto = null;
-	private MapView mapa = null;
+	private MapView mapa;
+	private MapController controlMapa;
+	private List<Overlay> mapOverlays;
+	
 	private boolean vistaSatelite = false;
+	
+	protected static GeoPoint mipunto = null;
 	private boolean desplazaAnimado = false;
 	public static List<Amigo> listaAmigos = new ArrayList<Amigo>();
 	
 	Button btnCentrar = null;
-	MapController controlMapa = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.maps_activity);
 		
-        //Obtenemos una referencia al control MapView
-        mapa = (MapView)findViewById(R.id.mapa);
- 
-        //Mostramos los controles de zoom sobre el mapa
-        mapa.setBuiltInZoomControls(true);
-        
+		//MANIPULANDO EL MAPA
+		mapa = (MapView) findViewById(R.id.mapa); // Referencia al control del mapa
+		mapa.displayZoomControls(true); 
+		mapa.setBuiltInZoomControls(true); // Mostrar controles de zoom psobre el mapa
+		controlMapa = mapa.getController(); 
         //Mostramos la vista Satelite dependiendo de la configuracion puesta
-        if (!vistaSatelite){
+        if (!vistaSatelite)
         	mapa.setSatellite(false);
-        }else{
+        else
         	mapa.setSatellite(false);
-        }
-       
-       
+ 
+
         
-        
-        
-        
-        
-	
 		btnCentrar = (Button) findViewById(R.id.buscameB);
-	
-		controlMapa = mapa.getController();
-	
+		
 		btnCentrar.setOnClickListener(new OnClickListener() {
 			
 		    public void onClick(View arg0) {
@@ -76,12 +69,9 @@ public class MapsActivity extends MapActivity{
 	 
 	                	double latitud = gps.getLatitude();
 	                	double longitud = gps.getLongitude();
-	                	
-	                	
 
                 	
-	    		        mipunto =
-	    			            new GeoPoint((int) (latitud*1000000), (int) (longitud*1000000));
+	    		        mipunto = new GeoPoint((int) (latitud*1000000), (int) (longitud*1000000));
 	    		        
 	    		       if (!desplazaAnimado){
 	    		    	   controlMapa.setCenter(mipunto);
