@@ -113,24 +113,17 @@ public class MainActivity extends SherlockActivity {
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-    	switch (item.getItemId()) {
-		case R.id.itemmenumaps:
-	    	//if (isOnline()){ //si hay conexi�n a internet lo mostramos, sin� no
-	    		launchMostrarMapas(null);
-	    	//}else{
-	    	//	Toast.makeText(getApplicationContext(), "Debes estar conectado a Internet para acceder a esta funci�n", Toast.LENGTH_LONG).show();
-	    	//}
-			
-			break;
-		case R.id.menu_settings:
-			//quien quiera que cargue otro Activity aqu�;
-			break;	
-		
-		case R.id.creditos_settings:
-		    	startActivity(new Intent(MainActivity.this, CreditosActivity.class));
-			break;	
-		default:
-			break;
+    	int itemId = item.getItemId();
+		if (itemId == R.id.itemmenumaps) {
+			//if (isOnline()){ //si hay conexi�n a internet lo mostramos, sin� no
+			launchMostrarMapas(null);
+  	//}else{
+  	//	Toast.makeText(getApplicationContext(), "Debes estar conectado a Internet para acceder a esta funci�n", Toast.LENGTH_LONG).show();
+  	//}
+		} else if (itemId == R.id.menu_settings) {
+		} else if (itemId == R.id.creditos_settings) {
+			startActivity(new Intent(MainActivity.this, CreditosActivity.class));
+		} else {
 		}
 		return false;
     }

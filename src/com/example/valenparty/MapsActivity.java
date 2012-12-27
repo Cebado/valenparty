@@ -113,11 +113,11 @@ public class MapsActivity extends MapActivity{
 	                GeoPoint caGus = new GeoPoint (39119540,-452542);
 	                GeoPoint caPau = new GeoPoint (39510444,-318405);
 	                
-	                Amigo yo = new Amigo("YO", "mipegir",mipunto,null,null,"muy Hombre" );
+	                //Amigo yo = new Amigo("YO", "mipegir",mipunto,null,null,"muy Hombre");
 	                Amigo Gustavo = new Amigo("Gustavo", "guslandu",caGus,null,null,"un poco nenaza" );
 	                Amigo Pau = new Amigo("Pau", "pamullo",caPau,null,null,"muy nenaza" );
 	                
-	                listaAmigos.add(yo);
+	                //listaAmigos.add(yo);
 	                listaAmigos.add(Gustavo);
 	                listaAmigos.add(Pau);
 	                
@@ -158,9 +158,8 @@ public class MapsActivity extends MapActivity{
 	
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-    	switch (item.getItemId()) {
-		case R.id.vista_satelite:
-
+    	int itemId = item.getItemId();
+		if (itemId == R.id.vista_satelite) {
 			if (item.isChecked()){
 				item.setChecked(false);
 				//cambiamos la variable global que regula esto
@@ -171,11 +170,7 @@ public class MapsActivity extends MapActivity{
 				//cambiamos la variable global que regula esto
 				vistaSatelite = true;
 			}
-			
-			
-			break;
-		case R.id.anim_activ:
-
+		} else if (itemId == R.id.anim_activ) {
 			if (item.isChecked()){
 				item.setChecked(false);
 				//cambiamos la variable global que regula esto
@@ -185,12 +180,7 @@ public class MapsActivity extends MapActivity{
 				//cambiamos la variable global que regula esto
 				desplazaAnimado = true;
 			}
-			
-			break;	
-
-		default:
-
-			break;
+		} else {
 		}
     	
         if (!vistaSatelite){
