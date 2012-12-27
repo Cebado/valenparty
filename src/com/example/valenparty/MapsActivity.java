@@ -148,9 +148,8 @@ public class MapsActivity extends MapActivity{
 	
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-    	switch (item.getItemId()) {
-		case R.id.vista_satelite:
-
+    	int itemId = item.getItemId();
+		if (itemId == R.id.vista_satelite) {
 			if (item.isChecked()){
 				item.setChecked(false);
 				//cambiamos la variable global que regula esto
@@ -161,11 +160,7 @@ public class MapsActivity extends MapActivity{
 				//cambiamos la variable global que regula esto
 				vistaSatelite = true;
 			}
-			
-			
-			break;
-		case R.id.anim_activ:
-
+		} else if (itemId == R.id.anim_activ) {
 			if (item.isChecked()){
 				item.setChecked(false);
 				//cambiamos la variable global que regula esto
@@ -175,12 +170,7 @@ public class MapsActivity extends MapActivity{
 				//cambiamos la variable global que regula esto
 				desplazaAnimado = true;
 			}
-			
-			break;	
-
-		default:
-
-			break;
+		} else {
 		}
     	
         if (!vistaSatelite){
