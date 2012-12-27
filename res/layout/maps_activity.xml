@@ -11,11 +11,11 @@
         android:layout_height="wrap_content"
         android:text="@string/boton_buscame" />
  
-<com.google.android.maps.MapView
-    android:id="@+id/mapa"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:apiKey="0pBY2dapW7dxaMHe0YbAbpzJnSs1JI2LYwrzmZQ"
-    android:clickable="true" />
+	<com.google.android.maps.MapView
+	    android:id="@+id/mapa"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:clickable="true" 
+	    android:apiKey="0pBY2dapW7dxaMHe0YbAbpzJnSs1JI2LYwrzmZQ"/>
  
 </LinearLayout>
