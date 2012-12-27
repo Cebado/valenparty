@@ -96,7 +96,7 @@ public class MapsActivity extends MapActivity{
     			        
   			        
 
-    			        Toast.makeText(getApplicationContext(), "Tu posición es - \nLatitud: " + (int) (latitud*1000000) + "\nLongitud: " + (int) (longitud*1000000), Toast.LENGTH_LONG).show();
+    			        Toast.makeText(getApplicationContext(), "Tu posiciï¿½n es - \nLatitud: " + (int) (latitud*1000000) + "\nLongitud: " + (int) (longitud*1000000), Toast.LENGTH_LONG).show();
 
 	                }else{
 
@@ -130,7 +130,7 @@ public class MapsActivity extends MapActivity{
 	                 * 
 	                 */
 	                
-	              //Añadimos la capa de marcadores
+	              //Aï¿½adimos la capa de marcadores
 	                List<Overlay> capas = mapa.getOverlays();
 	                MyInfoExtraMaps minfo = new MyInfoExtraMaps(mipunto);
 	                capas.add(minfo);
@@ -210,7 +210,7 @@ public class MapsActivity extends MapActivity{
 	}
 
 
-	//FUNCIÓN QUE COMPRUEBA SI HAY INTERNET
+	//FUNCIï¿½N QUE COMPRUEBA SI HAY INTERNET
 	public boolean isOnline() {
 		ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo netInfo = cm.getActiveNetworkInfo();
