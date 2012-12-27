@@ -206,19 +206,19 @@ public class GPSTracker extends Service implements LocationListener {
         alertDialog.show();
     }
  
-    @Override
+
     public void onLocationChanged(Location location) {
     }
  
-    @Override
+ 
     public void onProviderDisabled(String provider) {
     }
  
-    @Override
+
     public void onProviderEnabled(String provider) {
     }
  
-    @Override
+ 
     public void onStatusChanged(String provider, int status, Bundle extras) {
     	//aquí meteremos todo lo referente al tracking
     	//es decir, cada vez que cambie la ubicación la registraremos.

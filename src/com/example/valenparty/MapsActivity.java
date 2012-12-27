@@ -23,45 +23,38 @@ import android.widget.Toast;
 
 public class MapsActivity extends MapActivity{
 	
-	protected static GeoPoint mipunto = null;
-	private MapView mapa = null;
+	private MapView mapa;
+	private MapController controlMapa;
+	private List<Overlay> mapOverlays;
+	
 	private boolean vistaSatelite = false;
+	
+	protected static GeoPoint mipunto = null;
 	private boolean desplazaAnimado = false;
 	public static List<Amigo> listaAmigos = new ArrayList<Amigo>();
 	
 	Button btnCentrar = null;
-	MapController controlMapa = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.maps_activity);
 		
-        //Obtenemos una referencia al control MapView
-        mapa = (MapView)findViewById(R.id.mapa);
- 
-        //Mostramos los controles de zoom sobre el mapa
-        mapa.setBuiltInZoomControls(true);
-        
+		//MANIPULANDO EL MAPA
+		mapa = (MapView) findViewById(R.id.mapa); // Referencia al control del mapa
+		mapa.displayZoomControls(true); 
+		mapa.setBuiltInZoomControls(true); // Mostrar controles de zoom psobre el mapa
+		controlMapa = mapa.getController(); 
         //Mostramos la vista Satelite dependiendo de la configuracion puesta
-        if (!vistaSatelite){
+        if (!vistaSatelite)
         	mapa.setSatellite(false);
-        }else{
+        else
         	mapa.setSatellite(false);
-        }
-       
-       
+ 
+
         
-        
-        
-        
-        
-	
 		btnCentrar = (Button) findViewById(R.id.buscameB);
-	
-		controlMapa = mapa.getController();
-	
+		
 		btnCentrar.setOnClickListener(new OnClickListener() {
 			
 		    public void onClick(View arg0) {
@@ -76,12 +69,9 @@ public class MapsActivity extends MapActivity{
 	 
 	                	double latitud = gps.getLatitude();
 	                	double longitud = gps.getLongitude();
-	                	
-	                	
 
                 	
-	    		        mipunto =
-	    			            new GeoPoint((int) (latitud*1000000), (int) (longitud*1000000));
+	    		        mipunto = new GeoPoint((int) (latitud*1000000), (int) (longitud*1000000));
 	    		        
 	    		       if (!desplazaAnimado){
 	    		    	   controlMapa.setCenter(mipunto);
@@ -96,7 +86,7 @@ public class MapsActivity extends MapActivity{
     			        
   			        
 
-    			        Toast.makeText(getApplicationContext(), "Tu posición es - \nLatitud: " + (int) (latitud*1000000) + "\nLongitud: " + (int) (longitud*1000000), Toast.LENGTH_LONG).show();
+    			        Toast.makeText(getApplicationContext(), "Tu posiciï¿½n es - \nLatitud: " + (int) (latitud*1000000) + "\nLongitud: " + (int) (longitud*1000000), Toast.LENGTH_LONG).show();
 
 	                }else{
 
@@ -113,11 +103,11 @@ public class MapsActivity extends MapActivity{
 	                GeoPoint caGus = new GeoPoint (39119540,-452542);
 	                GeoPoint caPau = new GeoPoint (39510444,-318405);
 	                
-	                //Amigo yo = new Amigo("YO", "mipegir",mipunto,null,null,"muy Hombre");
+	                Amigo yo = new Amigo("YO", "mipegir",mipunto,null,null,"muy Hombre" );
 	                Amigo Gustavo = new Amigo("Gustavo", "guslandu",caGus,null,null,"un poco nenaza" );
 	                Amigo Pau = new Amigo("Pau", "pamullo",caPau,null,null,"muy nenaza" );
 	                
-	                //listaAmigos.add(yo);
+	                listaAmigos.add(yo);
 	                listaAmigos.add(Gustavo);
 	                listaAmigos.add(Pau);
 	                
@@ -130,7 +120,7 @@ public class MapsActivity extends MapActivity{
 	                 * 
 	                 */
 	                
-	              //Añadimos la capa de marcadores
+	              //Aï¿½adimos la capa de marcadores
 	                List<Overlay> capas = mapa.getOverlays();
 	                MyInfoExtraMaps minfo = new MyInfoExtraMaps(mipunto);
 	                capas.add(minfo);
@@ -200,7 +190,7 @@ public class MapsActivity extends MapActivity{
 	}
 
 
-	//FUNCIÓN QUE COMPRUEBA SI HAY INTERNET
+	//FUNCIï¿½N QUE COMPRUEBA SI HAY INTERNET
 	public boolean isOnline() {
 		ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo netInfo = cm.getActiveNetworkInfo();

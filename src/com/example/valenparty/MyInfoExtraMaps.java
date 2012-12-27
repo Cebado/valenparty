@@ -28,7 +28,7 @@ public class MyInfoExtraMaps extends Overlay  {
 	}
 
     
-    //Con esta función pintaremos a todos los amigos
+    //Con esta funciï¿½n pintaremos a todos los amigos
 	@Override
     public void draw(Canvas canvas, MapView mapView, boolean shadow)
     {
@@ -56,7 +56,7 @@ public class MyInfoExtraMaps extends Overlay  {
 	            p.setColor(Color.BLUE);
 	            //p.setTextScaleX(1);
 	 
-	            //Círculo y Texto
+	            //Cï¿½rculo y Texto
 	            //canvas.drawCircle(centro.x, centro.y, 10, p);
 	            canvas.drawText(MapsActivity.listaAmigos.get(i).getNombrePublico(), centro.x+5, centro.y+45, p);
 	            
@@ -149,7 +149,7 @@ public class MyInfoExtraMaps extends Overlay  {
 	}
 
     
-    //Con esta función pintaremos a todos los amigos
+    //Con esta funciï¿½n pintaremos a todos los amigos
 	@Override
     public void draw(Canvas canvas, MapView mapView, boolean shadow)
     {
@@ -157,7 +157,7 @@ public class MyInfoExtraMaps extends Overlay  {
         
         Log.d("DEBUG*", "LATITUD: "+ puntoX.toString() + "\tLONGITUD: "+ puntoX.toString());
         
-        //Toast.makeText(getBaseContext(R.layout.maps_activity), "Tu posición es - \nLatitud: " + (int) (MapsActivity.mipunto.getLatitudeE6()) + "\nLongitud: " + (int) (MapsActivity.mipunto.getLongitudeE6()), Toast.LENGTH_LONG).show();
+        //Toast.makeText(getBaseContext(R.layout.maps_activity), "Tu posiciï¿½n es - \nLatitud: " + (int) (MapsActivity.mipunto.getLatitudeE6()) + "\nLongitud: " + (int) (MapsActivity.mipunto.getLongitudeE6()), Toast.LENGTH_LONG).show();
         //imprimir por salida de error
         
         
@@ -171,7 +171,7 @@ public class MyInfoExtraMaps extends Overlay  {
             Paint p = new Paint();
             p.setColor(Color.BLUE);
  
-            //Círculo y Texto
+            //Cï¿½rculo y Texto
             //canvas.drawCircle(centro.x, centro.y, 10, p);
             canvas.drawText("Yo", centro.x+5, centro.y+45, p);
             

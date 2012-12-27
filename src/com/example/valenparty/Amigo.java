@@ -15,7 +15,7 @@ public class Amigo {
 	
 	Amigo(String NombrePub, String nickk, GeoPoint locAmig, Bitmap foto, String ipp, String sexxo){ //CONSTRUCTOR
 		NombrePublico=NombrePub;
-		nick = new String(nickk); //es necesario hacer el new?
+		nick = nickk; //es necesario hacer el new?
 		locAmigo = new GeoPoint(locAmig.getLatitudeE6(),locAmig.getLongitudeE6());
 		fotoAmigo = foto;
 		ip=ipp;
