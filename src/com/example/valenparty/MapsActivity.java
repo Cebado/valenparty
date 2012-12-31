@@ -104,12 +104,12 @@ public class MapsActivity extends MapActivity{
 	                GeoPoint caPau = new GeoPoint (39510444,-318405);
 	                
 	                Amigo yo = new Amigo("YO", "mipegir",mipunto,null,null,"muy Hombre" );
-	                Amigo Gustavo = new Amigo("Gustavo", "guslandu",caGus,null,null,"un poco nenaza" );
-	                Amigo Pau = new Amigo("Pau", "pamullo",caPau,null,null,"muy nenaza" );
+	                //Amigo Gustavo = new Amigo("Gustavo", "guslandu",caGus,null,null,"un poco nenaza" );
+	                //Amigo Pau = new Amigo("Pau", "pamullo",caPau,null,null,"muy nenaza" );
 	                
 	                listaAmigos.add(yo);
-	                listaAmigos.add(Gustavo);
-	                listaAmigos.add(Pau);
+	                //listaAmigos.add(Gustavo);
+	                //listaAmigos.add(Pau);
 	                
 	                
 	                
