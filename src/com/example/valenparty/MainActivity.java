@@ -6,7 +6,13 @@ package com.example.valenparty;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 
@@ -23,6 +29,8 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import android.widget.Button;
 
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+@SuppressLint("NewApi")
 public class MainActivity extends SherlockActivity {
 
     Button btnShowLocation;
@@ -126,6 +134,73 @@ public class MainActivity extends SherlockActivity {
 		}
 		return false;
     }
+
+	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+	@SuppressLint("NewApi")
+	@SuppressWarnings("deprecation")
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		
+		//Obtenemos una referencia al servicio de notificaciones
+		String ns = Context.NOTIFICATION_SERVICE;
+		NotificationManager notManager =
+		(NotificationManager) getSystemService(ns);
+		
+		//Configuramos la notificación
+		int icono = android.R.drawable.stat_sys_warning;
+		CharSequence textoEstado = "ValenParty sigue en segundo plano";
+		long hora = System.currentTimeMillis();
+		 
+		@SuppressWarnings("deprecation")
+		Notification notif =
+		    new Notification(icono, textoEstado, hora);  
+	/*	
+		 Notification notif = new Notification.Builder(this)
+         .setContentTitle("ValenParty sigue en segundo plano")
+         .setContentText("Puedes pulsar para abrir la aplicación de nuevo")
+         .setSmallIcon(android.R.drawable.stat_sys_warning)
+         .build();
+*/
+		
+		//Configuramos el Intent
+		Context contexto = getApplicationContext();
+		CharSequence titulo = "Mensaje de Alerta";
+		CharSequence descripcion = "Ejemplo de notificación.";
+		 
+		Intent notIntent = new Intent(contexto,
+		    MainActivity.class);
+		 
+		PendingIntent contIntent = PendingIntent.getActivity(
+		    contexto, 0, notIntent, 0);
+		 
+		notif.setLatestEventInfo(
+		    contexto, titulo, descripcion, contIntent);
+		
+		//AutoCancel: cuando se pulsa la notificaión ésta desaparece
+		notif.flags |= Notification.FLAG_AUTO_CANCEL;
+		 
+		//Añadir sonido, vibración y luces
+		notif.defaults |= Notification.DEFAULT_SOUND;
+		notif.defaults |= Notification.DEFAULT_VIBRATE;
+		notif.defaults |= Notification.DEFAULT_LIGHTS;
+		
+		//Enviar notificación
+		notManager.notify(1, notif);
+		
+		//super.onStop();
+	}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -151,5 +226,5 @@ public class MainActivity extends SherlockActivity {
 }
 
 
-//PPPPAAAAuuuuuuuuuuu
+
 
