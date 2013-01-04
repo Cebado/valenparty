@@ -3,28 +3,22 @@
     <string name="app_name">Valenparty</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">ValenParty</string>
     <string name="title_activity_principal">ValenParty</string>
-
-    <!-- GPS -->
     <string name="showcoordbutton">Muestra coordenadas</string>
     <string name="showmaps">Ver Mapa</string>
     <string name="launchMostrarMapas">launchMostrarMapas</string>
     <string name="boton_buscame">Búscame</string>
-    <string name="testmapas_m">Test Mapas</string>
+    <string name="testmapas_m">Localízame!</string>
     <string name="maps_menu_animacion">Animaciones</string>
     <string name="submen_maps_activado_anim">Animaciones activadas</string>
     <string name="menu_map_options">Opciones de mapas</string>
     <string name="menu_vista_satelite">Vista satélite</string>
-
-    <!-- MAIN -->
-    <string name="Red_Social">Compartir en Redes Sociales</string>
-    <string name="Activity">En espera</string>
+    <string name="fiesta">Me voy de fiesta</string>
     <string name="Mamigos">Buscar amigos</string>
     <string name="Gamigos">Gestión amigos</string>
-    
-
-    <!-- VENTANA LUGARES -->
+    <string name="Facebook">Facebook</string>
+    <string name="Twitter">  Twitter</string>
     <string name="title_activity_lista_lugares">Lista_lugares</string>
     <string name="sitios">Lista de discotecas</string>
     <string name="namesitio">Nombre</string>
@@ -33,18 +27,14 @@
     <string name="sitio1nombre">Superclub</string>
     <string name="sitio1direccion">C/San Vicente, 95</string>
     <string name="sitio1localidad">Valencia</string>
-
-    <!-- MENUS -->
     <string name="menu_creditos">Créditos</string>
-
-    <!-- MENSAJE TWITTER -->
-    <string name="mensaje_twitter">Tweet enviado desde la app @valenparty. Me voy de fiesta, nen!!   </string>
-    <string name="mensaje_twitter_notify">Tweet publicado en tu cuenta</string>
-    <string name="title_activity_redes_sociales">Redes_sociales</string>
-    
-    <!-- REDES SOCIALES -->
-    <string name="Redes">Compartir en Redes Sociales</string>
-    <string name="Facebook">Facebook</string>
-    <string name="Twitter">  Twitter</string>
-
+    <string name="vistanormal">Vista normal</string>
+    <string name="vistahibrida">Vista híbrida</string>
+    <string name="vistas_mapas">Vistas de mapa</string>
+    <string name="llamartelef">Llamar por teléfono</string>
+    <string name="envmensaj">Enviar mensaje</string>
+    <string name="mostrara">Mostrar a:</string>
+    <string name="vistarelieve">Vista de relieve</string>
+    <string name="title_activity_redes_sociales">Compartir en redes sociales</string>
 </resources>
+
