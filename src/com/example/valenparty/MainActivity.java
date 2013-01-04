@@ -22,11 +22,12 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends SherlockActivity {
 
     Button btnShowLocation;
-    Button botongestionamigos;
+    ImageButton botongestionamigos;
     
     // clase GPSTracker 
     GPSTracker gps;
@@ -37,7 +38,7 @@ public class MainActivity extends SherlockActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
   
-        botongestionamigos = (Button) findViewById(R.id.imageButton3);
+        botongestionamigos = (ImageButton) findViewById(R.id.imageButton3);
         
         // Evento boton gestor contactos
         botongestionamigos.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +48,20 @@ public class MainActivity extends SherlockActivity {
             }
         });
         
+        
+      //botÃ³n para compartir en redes sociales
+        final Button redSocial = (Button) findViewById(R.id.Button01);
+   	    redSocial.setOnClickListener(new View.OnClickListener() {
+ 			
+ 			public void onClick(View v) {
+ 				// TODO Auto-generated method stub
+ 				Intent rs = new Intent(MainActivity.this, RedesSociales.class);
+ 				startActivity(rs);
+ 			}			
+ 		});
+
+   	    
+   	    
         /* PRUEBA DE USO DE LA CLASE GPS 
         btnShowLocation = (Button) findViewById(R.id.button1);
         

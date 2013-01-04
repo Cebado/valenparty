@@ -16,12 +16,12 @@
         android:text="@string/showmaps" />
 -->
 
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
         android:orientation="vertical"
         android:padding="30dip" >
 
@@ -29,23 +29,24 @@
             android:id="@+id/imageButton1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:src="@drawable/start" />
 
         <Button
-            android:id="@+id/Button01"
-            android:layout_width="fill_parent"
+            android:id="@+id/button1"
+            android:layout_width="259dp"
             android:layout_height="wrap_content"
-            android:text="@string/fiesta"
+            android:background="@android:color/transparent"
+            android:text="@string/Activity"
             android:textColor="@color/Blanco" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.76" >
+            android:layout_height="wrap_content" >
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
                 <ImageButton
@@ -53,6 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/bump_128x128_32" />
 
                 <TextView
@@ -65,39 +67,42 @@
                     android:textSize="14dip" />
 
                 <ImageButton
-                    android:id="@+id/imageButton4"
+                    android:id="@+id/imageButton6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
-                    android:src="@drawable/facebook_128x128_32" />
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/maps_128x128_32" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/textView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/Facebook"
-                    android:textColor="@color/Blanco"
-                    android:textSize="20dip" />
-
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:text="Tendencias"
+                    android:textColor="@color/Blanco" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="36dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.27"
+                android:layout_height="161dp"
+                android:layout_weight="0.06"
                 android:orientation="vertical" >
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="99dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.01"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/imageButton3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/goggles_128x128_32" />
 
                 <TextView
@@ -112,27 +117,37 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal"
                     android:orientation="vertical" >
 
                     <ImageButton
-                        android:id="@+id/imageButton5"
+                        android:id="@+id/imageButton7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/twitter_128x128_32" />
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/alarm_128x128_32" />
 
                     <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="fill_parent"
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/Twitter"
-                        android:textColor="@color/Blanco"
-                        android:textSize="20dip" />
-
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="Alarma"
+                        android:textColor="@color/Blanco" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/Button01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/Red_Social"
+            android:textColor="@color/Blanco" />
 
+    </LinearLayout>
 
 </RelativeLayout>

@@ -1,4 +1,3 @@
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.valenparty"
     android:versionCode="1"
@@ -48,9 +47,24 @@
             android:label="@string/title_activity_lista_lugares" >
         </activity>
         
+        <activity
+            android:name=".RedesSociales"
+            android:label="@string/title_activity_redes_sociales" >
+        </activity>
+        
+        <activity android:name=".PrepareRequestTokenActivity" android:launchMode="singleTask">>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="x-oauthflow-twitter" android:host="callback" />
+			</intent-filter>
+	
+	
+</activity>
+
     </application>
 
     <!-- LOS COMENTARIOS SE HACEN ASI -->
 
 </manifest>
-
