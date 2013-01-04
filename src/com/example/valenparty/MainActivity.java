@@ -60,8 +60,8 @@ public class MainActivity extends SherlockActivity {
  			
  			public void onClick(View v) {
  				// TODO Auto-generated method stub
- 				Intent rs = new Intent(MainActivity.this, RedesSociales.class);
- 				startActivity(rs);
+ 				//Intent rs = new Intent(MainActivity.this, RedesSociales.class);
+ 				//startActivity(rs);
  			}			
  		});
 
