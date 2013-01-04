@@ -4,13 +4,13 @@
     <string name="app_name">Valenparty</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">ValenParty</string>
     <string name="title_activity_principal">ValenParty</string>
     <string name="showcoordbutton">Muestra coordenadas</string>
     <string name="showmaps">Ver Mapa</string>
     <string name="launchMostrarMapas">launchMostrarMapas</string>
     <string name="boton_buscame">Búscame</string>
-    <string name="testmapas_m">Test Mapas</string>
+    <string name="testmapas_m">Localízame!</string>
     <string name="maps_menu_animacion">Animaciones</string>
     <string name="submen_maps_activado_anim">Animaciones activadas</string>
     <string name="menu_map_options">Opciones de mapas</string>
@@ -29,5 +29,12 @@
     <string name="sitio1direccion">C/San Vicente, 95</string>
     <string name="sitio1localidad">Valencia</string>
     <string name="menu_creditos">Créditos</string>
+    <string name="vistanormal">Vista normal</string>
+    <string name="vistahibrida">Vista híbrida</string>
+    <string name="vistas_mapas">Vistas de mapa</string>
+    <string name="llamartelef">Llamar por teléfono</string>
+    <string name="envmensaj">Enviar mensaje</string>
+    <string name="mostrara">Mostrar a:</string>
+    <string name="vistarelieve">Vista de relieve</string>
 </resources>
 

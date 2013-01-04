@@ -27,14 +27,17 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+
 import android.widget.Button;
+import android.widget.ImageButton;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 @SuppressLint("NewApi")
 public class MainActivity extends SherlockActivity {
 
     Button btnShowLocation;
-    Button botongestionamigos;
+    ImageButton botongestionamigos;
     
     // clase GPSTracker 
     GPSTracker gps;
@@ -45,7 +48,7 @@ public class MainActivity extends SherlockActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
   
-        botongestionamigos = (Button) findViewById(R.id.imageButton3);
+        botongestionamigos = (ImageButton) findViewById(R.id.imageButton3);
         
         // Evento boton gestor contactos
         botongestionamigos.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +117,8 @@ public class MainActivity extends SherlockActivity {
 	
     //LANZAMOS LA VENTANA MAPS
     public void launchMostrarMapas(View view) { 
-    	startActivity(new Intent(this, MapsActivity.class));
+    	//startActivity(new Intent(this, MapsActivity.class));
+    	startActivity(new Intent(this, MapsActivityV2.class));
     }
     
     
@@ -135,12 +139,26 @@ public class MainActivity extends SherlockActivity {
 		return false;
     }
 
+    
+    
+    
+    
+    /*SOLO EN EL CASO DE QUE "ESTAMOS DE FIESTA" SE LANZA UNA NOTIFICACIÓN QUE NOS LO RECUERDA
+     * (non-Javadoc)
+     * En el
+     * @see com.actionbarsherlock.app.SherlockActivity#onDestroy()
+     */
+    
+    //GESTIONAMOS QUE APAREZCA UNA NOTIFICACIÓN CUANDO ESTAMOS DE FIESTA
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 	@SuppressLint("NewApi")
 	@SuppressWarnings("deprecation")
 	@Override
-	protected void onPause() {
+	protected void onDestroy() {
 		// TODO Auto-generated method stub
+		
+		
+		
 		
 		//Obtenemos una referencia al servicio de notificaciones
 		String ns = Context.NOTIFICATION_SERVICE;
@@ -148,7 +166,7 @@ public class MainActivity extends SherlockActivity {
 		(NotificationManager) getSystemService(ns);
 		
 		//Configuramos la notificación
-		int icono = android.R.drawable.stat_sys_warning;
+		int icono = R.drawable.partyicont; //R.drawable.amigo;//android.R.drawable.btn_star_big_on;
 		CharSequence textoEstado = "ValenParty sigue en segundo plano";
 		long hora = System.currentTimeMillis();
 		 
@@ -165,8 +183,8 @@ public class MainActivity extends SherlockActivity {
 		
 		//Configuramos el Intent
 		Context contexto = getApplicationContext();
-		CharSequence titulo = "Mensaje de Alerta";
-		CharSequence descripcion = "Ejemplo de notificación.";
+		CharSequence titulo = "ValenParty: estoy de fiesta...!";
+		CharSequence descripcion = "...en L'Umbracle. Click para gestionar";
 		 
 		Intent notIntent = new Intent(contexto,
 		    MainActivity.class);
@@ -174,6 +192,7 @@ public class MainActivity extends SherlockActivity {
 		PendingIntent contIntent = PendingIntent.getActivity(
 		    contexto, 0, notIntent, 0);
 		 
+		//Cuando funcione correctamente se pondran las funciones no @Deprecated
 		notif.setLatestEventInfo(
 		    contexto, titulo, descripcion, contIntent);
 		
@@ -182,13 +201,13 @@ public class MainActivity extends SherlockActivity {
 		 
 		//Añadir sonido, vibración y luces
 		notif.defaults |= Notification.DEFAULT_SOUND;
-		notif.defaults |= Notification.DEFAULT_VIBRATE;
-		notif.defaults |= Notification.DEFAULT_LIGHTS;
+		//notif.defaults |= Notification.DEFAULT_VIBRATE;
+		//notif.defaults |= Notification.DEFAULT_LIGHTS;
 		
 		//Enviar notificación
 		notManager.notify(1, notif);
 		
-		//super.onStop();
+		super.onDestroy();
 	}
     
     
