@@ -35,6 +35,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Point;
+import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -272,7 +273,30 @@ public class MapsActivityV2 extends android.support.v4.app.FragmentActivity  {
 		//			}
 	    	
 	    	
-	    GPSTracker gps=new GPSTracker(MapsActivityV2.this);
+	    GPSTracker gps=(new GPSTracker(MapsActivityV2.this){
+	    
+	    @Override
+	    public void onLocationChanged(Location location) {
+	        Toast.makeText(
+	                MapsActivityV2.this,
+	                "Hay cambios:\n" +
+	                location.getProvider(),
+	                Toast.LENGTH_SHORT).show();
+	        
+	        
+	        Log.d("Actualizacion posicion", "Hay cambio. Posicion=(" + location.getLatitude() + ","+ location.getLongitude() + ")");
+	        
+	        
+	        //Borramos nuestro anterior marker y lo actualizamos con la nueva posición
+	        
+	        
+	        //Enviamos al servidor nuestra nueva posición.
+	    }
+	    });
+	    
+	    startService(new Intent(this,GPSTracker.class));
+	    
+	    
 	    gps.getLocation();
 	    
 	    
@@ -285,6 +309,8 @@ public class MapsActivityV2 extends android.support.v4.app.FragmentActivity  {
         Amigo Gustavo = new Amigo("Gustavo", "687498857", new GeoPoint (39119540,-452542),null,"82.16.95.1","\n - Un poco nenaza", null );
         Amigo Pau = new Amigo("Pau", "680707225",new GeoPoint (39510444,-318405),null,"82.16.95.1","\n - Muy nenaza", null );
         Amigo X = new Amigo("El torero", "680123545",new GeoPoint (39466753,-376141),null,"82.16.95.1","\n - Un Rarillo", null );
+        Amigo v = new Amigo("VVV", "680123545",new GeoPoint (39416753,-376541),null,"82.16.95.1","\n - Un Rarillo", null );
+        Amigo c = new Amigo("cCc", "680123545",new GeoPoint (39436753,-376941),null,"82.16.95.1","\n - Un Rarillo", null );
         
         
         //se añaden a la lista
@@ -292,6 +318,8 @@ public class MapsActivityV2 extends android.support.v4.app.FragmentActivity  {
         lista.anyadir_Amigo(Pau);
         lista.anyadir_Amigo(Gustavo);
         lista.anyadir_Amigo(X);
+        lista.anyadir_Amigo(v);
+        lista.anyadir_Amigo(c);
         
         //Rellenamos el spinner (para que se pueda seleccionar cual ver)
         String[] spinnerAmigos=new String[lista.tamanyo()+1];

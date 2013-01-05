@@ -35,7 +35,6 @@
     <string name="envmensaj">Enviar mensaje</string>
     <string name="mostrara">Mostrar a:</string>
     <string name="vistarelieve">Vista de relieve</string>
-    <string name="title_activity_redes_sociales">Compartir en redes sociales</string>
+   <string name="title_activity_redes_sociales">Compartir en redes sociales</string>
 
 </resources>
-
