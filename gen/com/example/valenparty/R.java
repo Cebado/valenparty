@@ -1271,7 +1271,7 @@ containing a value of this type.
         public static final int abs__shareactionprovider_share_with_application=0x7f050014;
         public static final int app_name=0x7f05001a;
         public static final int boton_buscame=0x7f050022;
-        public static final int buscamebutton=0x7f05003d;
+        public static final int buscamebutton=0x7f05003e;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=30] 
@@ -1340,6 +1340,7 @@ containing a value of this type.
         public static final int title_activity_lista_lugares=0x7f05002d;
         public static final int title_activity_main=0x7f05001d;
         public static final int title_activity_principal=0x7f05001e;
+        public static final int title_activity_redes_sociales=0x7f05003d;
         public static final int vistahibrida=0x7f050037;
         public static final int vistanormal=0x7f050036;
         public static final int vistarelieve=0x7f05003c;

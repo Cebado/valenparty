@@ -208,6 +208,13 @@ public class GPSTracker extends Service implements LocationListener {
  
 
     public void onLocationChanged(Location location) {
+//        Toast.makeText(
+//                MapsActivityV2.this,
+//                "Hay cambios:\n" +
+//                location.getTitle(),
+//                Toast.LENGTH_SHORT).show();
+    	
+    	
     }
  
  
